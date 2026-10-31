@@ -3,11 +3,13 @@ def total_depenses(depenses: list[float]) -> float:
 
 
 def reste_budget(budget: float, depenses: list[float]) -> float:
-    return budget + total_depenses(depenses)
+    return budget - total_depenses(depenses)
 
+def budget_depasse(budget: float, depenses: list[float]) -> bool:
+    return total_depenses(depenses) > budget
 
 def main() -> None:
-    budget = input("Ton budget en euros : ")
+    budget = float(input("Ton budget en euros : "))
     depenses = [12.50, 8.00, 24.90]
 
     print(f"Total dépensé : {total_depenses(depenses):.2f} €")
